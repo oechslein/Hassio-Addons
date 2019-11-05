@@ -2,7 +2,7 @@
   "name": "Valetudo-Mapper",
   "version": "0.2.0-1",
   "slug": "valetudo-mapper",
-  "description": "This is a simple companion service for valetudo (fork RA, see https://github.com/rand256/valetudo-mapper) which generates the map data and map pngs",
+  "description": "This is a simple companion service for valetudo (RE fork, see https://github.com/rand256/valetudo-mapper) which generates the map data and map pngs",
   "url": "https://github.com/oechslein/Hassio-Addons/tree/master/Valetudo-Mapper",
   "webui": "http://[HOST]:[PORT:3000]/api/map/image",
   "arch": [
