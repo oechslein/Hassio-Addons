@@ -1,0 +1,80 @@
+{
+  "name": "Valetudo-Mapper",
+  "version": "0.2.0-4",
+  "slug": "Valetudo-Mapper",
+  "description": "This is a simple companion service for valetudo (fork RA) which generates the map data and map pngs.",
+  "url": "https://github.com/oechslein/Hassio-Addons/tree/master/Valetudo-Mapper",
+  "webui": "http://[HOST]:[PORT:3000]/api/map/image",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "startup": "system",
+  "boot": "auto",
+  "image": "oechslein/hassio-Valetudo-Mapper-{arch}",
+  "ports": {
+    "3000/tcp": null
+  },
+  "ports_description": {
+    "3000/tcp": "Port serving the floor plan (Not required for Hass.io Ingress)"
+  },
+  "ingress": true,
+  "ingress_port": 3000,
+  "ingress_entry": "api/map/image",
+  "panel_title": "Valetudo Floorplan",
+  "panel_icon": "mdi:floor-plan",
+  "map": ["ssl"],
+  "schema": {
+    "identifier": "str",
+    "topicPrefix": "str",
+    "autoconfPrefix": "str",
+    "broker_url": "match(^mqtts?://.+:.+@.+$)",
+    "caPath": "str?",
+    "mapSettings": {
+      "drawPath": "bool",
+      "drawCharger": "bool",
+      "drawRobot": "bool",
+      "drawForbiddenZones": "bool",
+      "drawVirtualWalls": "bool",
+      "border": "int(0,)",
+      "scale": "int(0,)",
+      "gradientBackground": "bool",
+      "crop_x1": "int(0,)",
+      "crop_y1": "int(0,)",
+      "crop_x2": "int(0,)",
+      "crop_y2": "int(0,)"
+    },
+    "mapDataTopic": "str",
+    "minMillisecondsBetweenMapUpdates": "int",
+    "publishMapImage": "bool",
+    "publishMapData": "bool"
+  },
+  "options": {
+    "identifier": "rockrobo",
+    "topicPrefix": "valetudo",
+    "autoconfPrefix": "homeassistant",
+    "broker_url": "mqtt://user:pass@foobar.example",
+    "caPath": "",
+    "mapSettings": {
+      "drawPath": true,
+      "drawCharger": true,
+      "drawRobot": true,
+      "drawForbiddenZones": true,
+      "drawVirtualWalls": true,
+      "border": 2,
+      "scale": 4,
+      "gradientBackground": true,
+      "crop_x1": 30,
+      "crop_y1": 70,
+      "crop_x2": 440,
+      "crop_y2": 440
+    },
+    "mapDataTopic": "valetudo/rockrobo/map_data",
+    "minMillisecondsBetweenMapUpdates": 10000,
+    "publishMapImage": true,
+    "publishMapData": true
+    }
+}
