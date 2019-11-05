@@ -1,6 +1,6 @@
 {
   "name": "Valetudo-Mapper",
-  "version": "0.2.0-4",
+  "version": "0.2.0-5",
   "slug": "Valetudo-Mapper",
   "description": "This is a simple companion service for valetudo (fork RA, see https://github.com/rand256/valetudo-mapper) which generates the map data and map pngs",
   "url": "https://github.com/oechslein/Hassio-Addons/tree/master/Valetudo-Mapper",
@@ -14,7 +14,6 @@
   ],
   "startup": "system",
   "boot": "auto",
-  "image": "oechslein/hassio-Valetudo-Mapper-{arch}",
   "ports": {
     "3000/tcp": null
   },
